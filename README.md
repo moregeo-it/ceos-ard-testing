@@ -12,7 +12,7 @@ Visit [ceos.org/ard](https://ceos.org/ard) for more information on CEOS-ARD, sel
 
 ## Framework
 
-Many satellite data users lack the expertise, infrastructure and internet bandwidth to efficiently and effectively access, preprocess, and utilize the growing volume of space-based data for local, regional, and national decision-making. Furthermore, even sophisticated users of EO data typically invest a large proportion of their effort into data preparation. This is a major barrier to full and successful utilization of space-based data, and threatens the success of major global and regional initiatives supported by the Committee on Earth Observation Satellites (CEOS). As data volumes grow, this barrier is becoming more significant for all users.
+Many satellite data users lack, infrastructure and internet bandwidth to efficiently and effectively access, preprocess, and utilize the growing volume of space-based data for local, regional, and national decision-making. Furthermore, even sophisticated users of EO data typically invest a large proportion of their effort into data preparation. This is a major barrier to full and successful utilization of space-based data, and threatens the success of major global and regional initiatives supported by the Committee on Earth Observation Satellites (CEOS). As data volumes grow, this barrier is becoming more significant for all users.
 
 Countries and international organizations have expressed a desire for support from CEOS to facilitate access to and processing of satellite data into CEOS Analysis Ready Data (CEOS-ARD) products. Systematic and regular provision of CEOS-ARD will greatly reduce the burden on global satellite data users.
 
