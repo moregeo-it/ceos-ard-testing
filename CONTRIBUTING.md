@@ -2,7 +2,7 @@
 
 Pull Requests are the primary method of contributing to CEOS-ARD, and everyone is welcome to proposals.
 
-We consider everyone using the Product Family Specifications to enrich their data to be a 'contributor',
+We consider everyone the Product Family Specifications to enrich their data to be a 'contributor',
 as CEOS-ARD is really about the end result of more interoperable data, not just creating a specification for the sake of it.
 So if you want to help then the best thing you can do is make new ARD available, build software that uses the specification, or give feedback.
 
