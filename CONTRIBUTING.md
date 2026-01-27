@@ -11,7 +11,7 @@ So if you want to help then the best thing you can do is make new ARD available,
 Any proposed changes to the specification should be done as pull requests,
 ideally after discussing the changes in an issue before.
 
-All pull additionally require a review of a CEOS-ARD team members.
+All pull require a review of a CEOS-ARD team members.
 
 ## Development / Authoring
 
