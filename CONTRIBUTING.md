@@ -6,6 +6,8 @@ We consider everyone using the Product Family Specifications to enrich their dat
 as CEOS-ARD is really about the end result of more interoperable data, not just creating a specification for the sake of it.
 So if you want to help then the best thing you can do is make new ARD available, build software that uses the specification, or give feedback.
 
+Hello Welt!
+
 ## Submitting Pull Requests
 
 Any proposed changes to the specification should be done as pull requests,
