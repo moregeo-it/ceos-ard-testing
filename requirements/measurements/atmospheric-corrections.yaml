@@ -6,7 +6,7 @@ threshold:
 
     Metadata contains a single DOI landing page with references to:
     
-    - a citable peer-reviewed algorithm
+    - a citable peer-reviewed algorithm.
     - technical documentation regarding the implementation of that algorithm
     - the sources of ancillary data used to make corrections
   notes:
