@@ -10,6 +10,7 @@ glossary:
   - vis
   - nir
   - swir
+  - test
 
 references:
   - li2012 # todo: move to req. 3.3
