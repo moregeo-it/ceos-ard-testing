@@ -24,7 +24,8 @@ jobs:
           VERSION="${BASH_REMATCH[2]}"
           echo "pfs=$PFS" >> "$GITHUB_OUTPUT"
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
-          echo "output_dir=build/CEOS-ARD-PFS-$PFS" >> "$GITHUB_OUTPUT"
+          echo "output_dir=build/" >> "$GITHUB_OUTPUT"
+          echo "output_prefix=build/CEOS-ARD-PFS-$PFS" >> "$GITHUB_OUTPUT"
           echo "location=build/CEOS-ARD-PFS-$PFS-$VERSION" >> "$GITHUB_OUTPUT"
 
       - uses: actions/checkout@v6
@@ -55,7 +56,7 @@ jobs:
       - name: Generate PFS documents
         run: >
           ceos-ard generate ${{ steps.parse.outputs.pfs }}
-          -o ${{ steps.parse.outputs.output_dir }}
+          -o ${{ steps.parse.outputs.output_prefix }}
           --self-contained
           --stable
 
