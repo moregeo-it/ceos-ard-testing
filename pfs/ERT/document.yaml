@@ -29,7 +29,6 @@ requirements:
   - metadata/instrument-sar
   - metadata/time-source
   - metadata/acquisition-parameters-sar
-  - metadata/orbit
   - metadata/processing-parameters
   - metadata/image-attributes-sar
   - metadata/sensor-calibration-sar
