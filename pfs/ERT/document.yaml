@@ -1,0 +1,156 @@
+title: Earth Radiance Temperature
+version: 5.6.0
+type: SAR
+applies_to: Data collected by Earth Radiance Temperature is normally used for temperature radiance measurement.
+background: |-
+  This PFS is specifically aimed at users interested in exploring the potential of SAR but who may lack the expertise or facilities for SAR processing.
+
+  The CEOS-ARD Normalised Radar Backscatter (NRB) specification describes products that have been subject to Radiometric Terrain Correction (RTC) and are provided in the Gamma-Nought ($\gamma^0_T$) backscatter convention [@small2011], which mitigates the variations from diverse observation geometries and is recommended for most land applications.
+  An additional metadata layer can be optionally provided for conversion of $\gamma^0_T$ to Sigma-Nought ($\sigma^0_T$) backscatter layer for compatibility with legacy software or numerical models.
+
+  As the NRB product contains backscatter values only, it cannot be directly used for SAR polarimetry or interferometric applications that require relative polarization phase or local phase estimates respectively.
+  However, as an option, a “flattened” phase data layer can be provided with an NRB product for enabling InSAR analysis.
+  The flattened phase is the interferometric phase, with respect to a reference orbit and to a digital elevation model (DEM), for which the topographic phase contribution is removed.
+
+  The NRB specification accommodates basic mosaic products generated from more than one input data source, where each pixel value in the NRB product uniquely corresponds to the pixel value of one of its input data sources, indicated in the Acquisition ID per-pixel metadata.
+  For products where the pixel value is dependent on multiple input sources, see the Composite Backscatter (CB) PFS.
+glossary:
+- metadata
+- nrb
+- rtc
+- insar
+- dem
+- pfs
+- mosaic-product
+- composite-product
+references:
+- small2011
+introduction:
+- what-are-ceos-ard-products
+- when-is-a-product-ceos-ard
+- difference-threshold-goal
+- sar-differences
+requirements:
+- category: general-metadata
+  requirements:
+  - metadata/traceability-sar
+  - metadata/machine-readability-sar
+  - metadata/product-type
+  - metadata/pfs-url
+  - metadata/time-sar
+- category: source-metadata
+  requirements:
+  - metadata/acquisition-id
+  - metadata/data-access-source
+  - metadata/instrument-sar
+  - metadata/time-source
+  - metadata/acquisition-parameters-sar
+  - metadata/orbit
+  - metadata/processing-parameters
+  - metadata/image-attributes-sar
+  - metadata/sensor-calibration-sar
+  - metadata/performance-indicators
+  - metadata/polarimetric-calibration-matrices
+  - metadata/mean-faraday-rotation-angle
+  - metadata/ionosphere-indicator
+- category: product-metadata
+  requirements:
+  - metadata/data-access-product
+  - metadata/auxiliary-data-sar
+  - metadata/sample-spacing
+  - metadata/enl
+  - metadata/resolution
+  - metadata/filtering-speckle
+  - metadata/geo-bbox
+  - metadata/geo-area-sar
+  - metadata/image-size
+  - metadata/pixel-coordinate-convention
+  - metadata/crs-sar
+  - metadata/orbit-reference-nrb-pol
+- category: per-pixel-metadata
+  requirements:
+  - metadata/machine-readability-sar
+  - per-pixel/data-mask
+  - per-pixel/scattering-area
+  - per-pixel/local-incident-angle
+  - ref: per-pixel/ellipsoidal-incident-angle
+    append:
+      requirements:
+        image:
+          optional: yes
+  - per-pixel/noise-power
+  - per-pixel/gamma-sigma-ratio
+  - per-pixel/acquisition-id-mosaic
+  - per-pixel/dem
+- category: radiometrically-corrected-measurements
+  requirements:
+  - measurements/backscatter-nrb
+  - measurements/scaling-conversion
+  - metadata/noise-removal
+  - corrections/radiometric-terrain-algorithm-applied
+  - metadata/radiometric-accuracy-sar
+  - measurements/flattened-phase
+- category: geometric-corrections
+  requirements:
+  - metadata/geometric-correction-algorithm
+  - corrections/dem
+  - corrections/geometric-accuracy-sar
+  - corrections/geometric-refined-accuracy
+  - corrections/gridding-convention
+annexes:
+- sar-general-processing-roadmap
+authors:
+- François Charbonneau, Natural Resources Canada, Canada
+- Ake Rosenqvist, soloEO / Japan Aerospace Exploration Agency, Japan
+- John Truckenbrodt, German Aerospace Centre (DLR), Germany
+- Clément Albinet, European Space Agency (ESA), Italy
+- David Small, University of Zurich, Switzerland
+- Bruce Chapman, Jet Propulsion Laboratory, USA
+- Howard Zebker, Stanford University, USA
+- Zheng-Shu Zhou, CSIRO, Australia
+- Kimberlee Baldry, Geoscience Australia, Australia
+- David Bekaert, Jet Propulsion Laboratory, USA
+- Virginia Brancato, Jet Propulsion Laboratory, USA
+- Danilo Dadamia, CONAE, Argentina
+- Benjamin Deschamps, Environment and Climate Change, Canada
+- Matt Garthwaite, CSIRO, Australia
+- Guillaume Hajduch, Collecte Localisation Satellites, France
+- Jayasri Poludasu, ISRO, India
+- Josef Kellndorfer, Earth Big Data, USA
+- Joseph Kennedy, Alaska Satellite Facility, USA
+- Marco Lavalle, Jet Propulsion Laboratory, USA
+- Thomas Logan, Alaska Satellite Facility, USA
+- Franz Meyer, Alaska Satellite Facility, USA
+- Nuno Miranda, European Space Agency (ESA), Italy
+- Matthias Mohr, moreGeo GmbH, Germany
+- Muriel Pinheiro, European Space Agency (ESA), Italy
+- Marko Repse, Sinergise, Slovenia
+- HariPriya Sakethapuram, ISRO, India
+- Gustavo H. X. Shiroma, Jet Propulsion Laboratory, USA
+- Usha Sundari, ISRO, India
+- Andreia Siqueira, Geoscience Australia, Australia
+- Scott Staniewicz, Jet Propulsion Laboratory, USA
+- Takeo Tadono, Japan Aerospace Exploration Agency, Japan
+- Medhavy Thankappan, Geoscience Australia, Australia
+- Antonio Valentino, Starion for European Space Agency (ESA), Italy
+- Anna Wendleder, German Aerospace Centre (DLR), Germany
+- Fang Yuan, Digital Earth Africa, Australia
+- Francesco De Zan, Delta-Phi Remote Sensing GmbH, Germany
+changes:
+- date: 2026-07-20
+  author: Matthias Mohr
+  level: minor
+  change: |-
+    - The Combined SAR PFS has been split into separate PFS per product type
+    - Restructured the document; various minor editorial changes; removed empty, irrelevant, or unused parts - many of the changes resulted from the split
+    - Numerical identifiers were rotated and are deprecated; new textual identifiers have been added
+    - Moved the Background paragraph about the commonalities and differences in the SAR PFSes to the Introduction
+    - Requirement "Document identifier": Removed the trailing “for Synthetic Aperture Radar”
+    - Requirement category "CEOS-ARD Product Data Attributes" renamed to “Product Metadata”; Requirement "Source Data Attributes" renamed to “Source Metadata”. Adapted descriptions accordingly.
+    - Requirement category "Source Data Attributes": Moved the information about sequential acquisition identifiers to a new threshold requirement “Acquisition ID”. Adapted category description accordingly.
+    - The subcategories for Source and Product metadata have been flattened into top-level categories
+    - Annex has been reformatted and updated as required by the split
+    - Document history has been reset. Check the previous versions for details
+
+    **Note:** This document is the successor of the former [CEOS-ARD for SAR PFS v1.3.1](https://ceos.org/ard/files/PFS/SAR/v1.3.1/CEOS-ARD_PFS_SAR_v1.3.1.pdf) for product type **Normalised Radar Backscatter (NRB)**.
+  reason: Migration to building blocks.
