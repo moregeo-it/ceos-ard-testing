@@ -1,6 +1,6 @@
 ---
 title: >-
-  CEOS-ARD - Optical - Surface Temperature - Version 6.0.0-draft
+  CEOS-ARD - Optical - Surface Brightness Temperature - Version 1.0.0-draft
 lang: en
 format:
   - markdown # markdown_mmd doesn't support citations, so we use pandoc's markdown and add extentions
@@ -33,7 +33,7 @@ nocite: |
 
 ![](assets/CEOS_logo_colour_black_text_right.png)
 
-# CEOS-ARD - Optical - Surface Temperature
+# CEOS-ARD - Optical - Surface Brightness Temperature
 
 &nbsp;
 
@@ -44,55 +44,13 @@ Please visit the [CEOS-ARD website](https://ceos.org/ard) for the latest endorse
 
 ## Document Status
 
-Product Family Specification, Optical, Surface Temperature
+Product Family Specification, Optical, Surface Brightness Temperature
 
 Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-contact@lists.ceos.org)
 
 ## Document History
 
-### 2026-08-14 (MAJOR)
-
-**This is a breaking change!**
-
-- Created separate requirements for 'Corrections for Atmosphere' and 'Adjustments for Emissivity and Anisotropy'. Per-pixel emissivity information is now required at Threshold. 
-- Introduced a Threshold requirement for 'Measurement Uncertainty'.
-- Renamed 'Measurement' to 'Measurand'
-- Removed threshold requirement for 'Algorithms'.
-- Introduced Per-pixel Goal requirement for 'Terrain Occlusion'.
-- Replaced 'Snow/Ice' mask with 'Surface', covering Land/Water at Threshold and Snow/Ice at Goal.
-- Updated 'Cloud' and 'Cloud Shadow' requirements to align more closely with the AR PFS v2.0 and the suitability of cloud shadow for non-reflectance methods.
-- Updated 'No Data' requirement to address https://github.com/ceos-org/ceos-ard/issues/4.
-- Updated 'Incomplete Testing' requirement to aid machine readability / automated assessment.
-- Removed redundant 'Metadata Machine Readability' requirement from Per-pixel Metadata.
-- Replaced General Metadata Percentage of Valid Observations requirement with Valid Pixels
-- Introduced a new Processing Chain Provenance requirement, where Threshold = Reconstructibility, Goal = Reproducibility. 
-- Removed 'Radiometric Accuracy' requirement.
-- Adopted AR PFS v2.0 requirements for 'Auxiliary Data', 'Measurand Uncertainty', 'Encoding', 'Sensor Calibration', 'Spectral Bands', 'Instrument', 'Geometric Uncertainty of the Data', 'Geometric Correction Methods', 'Map Projection', and 'Data Collection Time'.
-- Aligned with other optical PFS where the ST PFS had minor editorial differences.
-
-**Justification:**
-Update to address evolving landscape of thermal missions, including capabilities of the commercial sector and user needs. Closer alignment with more recently updated PFS. Changes also reflect recent CEOS-ARD Oversight Group discussions, swapping strict threshold requirements for algorithms in favour of uncertainty information.
-
-**Editor:** Harvey Jones
-
-### 2026-03-26 (PATCH)
-
-- Renamed CARD4L to CEOS-ARD
-- Restructured the document; removed empty or unused parts
-- Split "Applies to" section into "Applies to" and "Background" sections
-- Document history has been reset. Check the previous versions for details
-- Numerical identifiers were rotated and are deprecated; new textual identifiers have been added
-- The requirement "Radiometric corrections must lead to a valid measurement [...]" has been moved from the category description to the measurement requirement.
-- If no threshold requirement applies, the wording has been made consistent (e.g. former req. 1.7 and 1.8).
-- Former req. 1.9: Removed "on instrument" from "As threshold, but information on instrument should be available".
-- Former req. 2.3: Replaced the wording "e.g., due to missing ancillary data for some pixels." with "This may be the result of missing ancillary data for a subset of the pixels."
-- Annex has been reformatted and updated
-
-**Justification:**
-Migration to building blocks.
-
-**Editor:** Matthias Mohr
-
+Not available, see previous versions of the document for its history.
 
 ## Contributing Authors
 
@@ -134,10 +92,10 @@ Migration to building blocks.
 ## Description
 
 **Product Family Specification:**
-Optical, Surface Temperature (ST)
+Optical, Surface Brightness Temperature (SBT)
 
 **Version:**
-6.0.0-draft
+1.0.0-draft
 
 **Applies to:**
 Data collected with satellite sensors operating in the thermal infrared (TIR and MWIR) and microwave wavelengths. These typically operate with ground sample distance and resolution in the order 1 dm - 50 km however the specification is not inherently limited to these resolutions.
@@ -145,7 +103,7 @@ Data collected with satellite sensors operating in the thermal infrared (TIR and
 
 ## Background
 
-Remotely sensed surface temperature measurements tend to be provided as surface brightness temperature (SBT), land surface temperature (LST), water surface temperature (WST), or ice surface temperature (IST), where LST, WST, and IST are derived from SBT accounting for the emissivity of the target. This specification identifies Surface Temperature (ST), including but not limited to LST, WST, and IST, as the minimum or threshold requirement for analysis ready surface data.
+Remotely sensed surface temperature measurements tend to be provided as surface brightness temperature (SBT), land surface temperature (LST), water surface temperature (WST), or ice surface temperature (IST), where LST, WST, and IST are derived from SBT accounting for the emissivity of the target. This specification identifies SBT as being the minimum or Threshold requirement for analysis ready surface data.
 
 &#12;
 
@@ -783,24 +741,7 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard-testing/ceos-ard-testing/requirements/corrections/emissivity-st.yaml-->`3.3.` Adjustments for Emissivity and Anisotropy {#sec:rac-emiani label="|Radiometric and Atmospheric Corrections: Adjustments for Emissivity and Anisotropy"}
-
-Identifier: `rac-emiani`
-
-
-
-##### Threshold requirements:
-
-Retrieval methods for estimating surface emissivity per channel are provided.
-
-
-##### Goal requirements:
-
-As threshold, but the retrieval method for estimating the total directional emissivity is provided.
-
----
-
-#### <!-- edit:/home/runner/work/ceos-ard-testing/ceos-ard-testing/requirements/measurements/uncertainty-st.yaml-->`3.4.` Measurand Uncertainty {#sec:rac-muncer-st label="|Radiometric and Atmospheric Corrections: Measurand Uncertainty"}
+#### <!-- edit:/home/runner/work/ceos-ard-testing/ceos-ard-testing/requirements/measurements/uncertainty-st.yaml-->`3.3.` Measurand Uncertainty {#sec:rac-muncer-st label="|Radiometric and Atmospheric Corrections: Measurand Uncertainty"}
 
 Identifier: `rac-muncer-st`
 
