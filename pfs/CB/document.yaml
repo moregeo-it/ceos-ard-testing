@@ -30,6 +30,7 @@ glossary:
 
 references:
   - small2022
+  - bell2023
 
 introduction:
   - what-are-ceos-ard-products
@@ -103,7 +104,6 @@ requirements:
 
 annexes:
   - sar-general-processing-roadmap
-  - sar-cb-example
 
 authors:
   - François Charbonneau, Natural Resources Canada, Canada
