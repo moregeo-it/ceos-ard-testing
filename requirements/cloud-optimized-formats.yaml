@@ -8,6 +8,8 @@ requirements:
     optional: true
 dependencies:
 glossary:
+- ale
+- cb
 references:
 changes:
 history:

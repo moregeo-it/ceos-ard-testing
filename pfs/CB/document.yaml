@@ -3,7 +3,7 @@ version: 1.1.0
 type: Synthetic Aperture Radar
 applies_to: Data collected by Synthetic Aperture Radar sensors
 background: |-
-  This PFS is specifically aimed at users interested in exploring the potential of SAR but who may lack the expertise or facilities for SAR processing.
+  This PFS is specifically aimed at users interested in exploring the potential of SAR but who may lack the expertise or facilities for SAR .
 
   The CEOS-ARD Composite Backscatter (CB) product is a composite backscatter product generated from a set of SAR images acquired over a time-window, and where each pixel value is derived from two or more of the input data sources (e.g. by local resolution weighting [@small2022]).
   Note the difference with respect to the basic mosaic products accommodated by NRB. CB datasets can be derived from a set of NRB or POL or GSLC inputs, making further use of those products’ backscatter estimates and scattering area per-pixel metadata that were used to normalise them.
@@ -19,7 +19,6 @@ dependencies:
 
 glossary:
   - sar
-  - cb
   - nrb
   - pol
   - gslc
